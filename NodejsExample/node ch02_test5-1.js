@@ -1,0 +1,1 @@
+console.log('a + b = '+calc.add(10,5))
