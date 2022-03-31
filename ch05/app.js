@@ -1,7 +1,10 @@
+// node_modules 에 있는 express 관련 파일을 가져온다.
 var express = require('express');
+
+// express 는 함수이므로, 반환값을 변수에 저장한다.
 var app = express();
-app.set('port', process.env.PORT || 3000);
-// Express 서버 시작
-http.createServer(app).listen(app.get('port'), function(){
-    console.log('익스프레스 서버를 시작했습니다 : ' + app.get('port'));
-});
+
+// 3000 포트로 서버 오픈
+app.listen(3000, function() {
+    console.log("start! express server on port 3000");
+})
