@@ -1,5 +1,5 @@
 var express = require('express');
-http = require('http');
+http = require('https');
 path = require('path');
 
 var bodyParser = require('body-parser');
@@ -10,7 +10,10 @@ var app = express();
 app.set('port',process.env.PORT||3000);
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
-app.use('/',static(path.join(__dirname,'public')));
+app.use('./',static(path.join(__dirname,'public')));
+app.use('./index',static(path.join(__dirname,'public/index.html')));
+app.use('./login',static(path.join(__dirname,'public/login.html')));
+app.use('./login2',static(path.join(__dirname,'public/login2.html')));
 app.use(function(req,res,next){
     console.log('첫번째 미들웨어에서 요청을 처리함.');
 
