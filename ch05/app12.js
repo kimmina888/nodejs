@@ -9,7 +9,7 @@ const req = require('express/lib/request');
 const session = require('express-session');
 app.use(expressSession({
     secret : 'my key',
-    resave : true;
+    resave : true,
     saveUnintialized : true
 }));
 router.route('/process/login').post(function(req,res){
